@@ -5,6 +5,11 @@ let blokada = 0;                                                                
 const poljaTabele = Array.from(dugme);                                                  // od Node list-e pravimo niz kako bi manipulisali elementima istog
 let bojaX = document.getElementById('iks');
 let bojaO= document.getElementById('oks');
+let score1 = document.querySelector('.ispisTextaX');
+let scoreX = 0;
+let score2 = document.querySelector('.ispisTextaO');
+let scoreO = 0;
+let rezultat = document.querySelector('.rezultat');
 
 window.onload = () => {                                                                 // pri uchitavanju stranice obavesti igracha shta treba da uradi kako bi
         upis.innerText = 'Click "New round" to start game.';                            // zapocheo igru
@@ -15,6 +20,9 @@ document.querySelector('.novaRunda').addEventListener("click", () => {          
         znak = simboli[Math.floor(Math.random() * simboli.length)];                     // blokada kako bi se simboli mogli postaviti u polja na tabli
         blokada = 1;
         upis.innerText = znak + ' play first, good luck!';
+        rezultat.innerText = "Score: ";
+        score1.innerText = 'X - ' + scoreX;
+        score2.innerText = 'O - ' + scoreO;
         bojaO.style.background = '';
         bojaX.style.background = '';
         znak ==='O' ? (bojaO.style.background ="yellow", bojaX.style.background = '') :  (bojaX.style.background  = 'yellow', bojaO.style.background = '');
@@ -36,8 +44,9 @@ dugme.forEach(button => {                                                       
                                 if (poljaTabele[0].innerText === znak && poljaTabele[1].innerText === znak &&  poljaTabele[2].innerText === znak){
                                         poljaTabele[0].style.background = 'lightgreen';
                                         poljaTabele[1].style.background = 'lightgreen'; 
-                                        poljaTabele[2].style.background = 'lightgreen';  
+                                        poljaTabele[2].style.background = 'lightgreen';
                                         upis.innerText = znak + ' has WON!';
+                                        znak === 'X' ? (scoreX++, score1.innerText = 'X - ' + scoreX) : (scoreO++, score2.innerText = 'O - ' + scoreO);
                                         blokada = 0;
                                         return;
                                 }
