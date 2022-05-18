@@ -19,7 +19,6 @@ p {
     min-width: 350px;
     margin: auto;
     background: rgb(192, 35, 35);
-    box-shadow: 5px 10px #a8a8a8;
     width: 90%;
     padding: 10px;
     text-align: center;
@@ -35,7 +34,6 @@ p {
 }
 
 .grid-item {
-    position: relative;
     cursor: pointer;
     width: 100px;
     height: 100px;
