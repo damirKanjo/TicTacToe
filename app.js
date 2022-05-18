@@ -42,70 +42,38 @@ dugme.forEach(button => {                                                       
                                 poljaTabele[indexPolja].innerText = znak;
 
                                 if (poljaTabele[0].innerText === znak && poljaTabele[1].innerText === znak &&  poljaTabele[2].innerText === znak){
-                                        poljaTabele[0].style.background = 'lightgreen';
-                                        poljaTabele[1].style.background = 'lightgreen'; 
-                                        poljaTabele[2].style.background = 'lightgreen';
-                                        upis.innerText = znak + ' has WON!';
-                                        znak === 'X' ? (scoreX++, score1.innerText = 'X - ' + scoreX) : (scoreO++, score2.innerText = 'O - ' + scoreO);
-                                        blokada = 0;
+                                        polja(0,1,2,znak.toString());
                                         return;
                                 }
-                                else if (poljaTabele[3].innerText === znak &&  poljaTabele[4].innerText === znak &&  poljaTabele[5].innerText === znak){ 
-                                        upis.innerText = znak + ' has WON!';
-                                        poljaTabele[3].style.background = 'lightgreen';
-                                        poljaTabele[4].style.background = 'lightgreen'; 
-                                        poljaTabele[5].style.background = 'lightgreen'; 
-                                        blokada = 0;
+                                else if (poljaTabele[3].innerText === znak &&  poljaTabele[4].innerText === znak &&  poljaTabele[5].innerText === znak){
+                                        polja(3,4,5,znak.toString());
                                         return;
                                 }
-                                else if (poljaTabele[6].innerText === znak &&  poljaTabele[7].innerText === znak &&  poljaTabele[8].innerText === znak){       
-                                        upis.innerText = znak + ' has WON!';
-                                        poljaTabele[6].style.background = 'lightgreen';
-                                        poljaTabele[7].style.background = 'lightgreen'; 
-                                        poljaTabele[8].style.background = 'lightgreen'; 
-                                        blokada = 0;
+                                else if (poljaTabele[6].innerText === znak &&  poljaTabele[7].innerText === znak &&  poljaTabele[8].innerText === znak){
+                                        polja(6,7,8,znak.toString());
                                         return;
                                 }
-                                else if (poljaTabele[0].innerText === znak &&  poljaTabele[3].innerText === znak &&  poljaTabele[6].innerText === znak){       
-                                        upis.innerText = znak + ' has WON!';
-                                        poljaTabele[0].style.background = 'lightgreen';
-                                        poljaTabele[3].style.background = 'lightgreen'; 
-                                        poljaTabele[6].style.background = 'lightgreen';
-                                        blokada = 0;
+                                else if (poljaTabele[0].innerText === znak &&  poljaTabele[3].innerText === znak &&  poljaTabele[6].innerText === znak){ 
+                                        polja(0,3,6,znak.toString());
                                         return;
                                 }
-                                else if (poljaTabele[1].innerText === znak &&  poljaTabele[4].innerText === znak &&  poljaTabele[7].innerText === znak){       
-                                        upis.innerText = znak + ' has WON!';
-                                        poljaTabele[1].style.background = 'lightgreen';
-                                        poljaTabele[4].style.background = 'lightgreen'; 
-                                        poljaTabele[7].style.background = 'lightgreen'; 
-                                        blokada = 0;
+                                else if (poljaTabele[1].innerText === znak &&  poljaTabele[4].innerText === znak &&  poljaTabele[7].innerText === znak){ 
+                                        polja(1,4,7,znak.toString());
                                         return;
                                 }
-                                else if (poljaTabele[2].innerText === znak &&  poljaTabele[5].innerText === znak &&  poljaTabele[8].innerText === znak){      
-                                        upis.innerText = znak + ' has WON!';
-                                        poljaTabele[2].style.background = 'lightgreen';
-                                        poljaTabele[5].style.background = 'lightgreen'; 
-                                        poljaTabele[8].style.background = 'lightgreen'; 
-                                        blokada = 0;
+                                else if (poljaTabele[2].innerText === znak &&  poljaTabele[5].innerText === znak &&  poljaTabele[8].innerText === znak){ 
+                                        polja(2,5,8,znak.toString());
                                         return;
                                 }
-                                else if (poljaTabele[0].innerText === znak &&  poljaTabele[4].innerText === znak &&  poljaTabele[8].innerText === znak){       
-                                        upis.innerText = znak + ' has WON!';
-                                        poljaTabele[0].style.background = 'lightgreen';
-                                        poljaTabele[4].style.background = 'lightgreen'; 
-                                        poljaTabele[8].style.background = 'lightgreen'; 
-                                        blokada = 0;
+                                else if (poljaTabele[0].innerText === znak &&  poljaTabele[4].innerText === znak &&  poljaTabele[8].innerText === znak){
+                                        polja(0,4,8,znak.toString());
                                         return;
                                 }
-                                else if (poljaTabele[2].innerText === znak &&  poljaTabele[4].innerText === znak &&  poljaTabele[6].innerText === znak){       
-                                        upis.innerText = znak + ' has WON!';
-                                        poljaTabele[2].style.background = 'lightgreen';
-                                        poljaTabele[4].style.background = 'lightgreen'; 
-                                        poljaTabele[6].style.background = 'lightgreen'; 
-                                        blokada = 0;
+                                else if (poljaTabele[2].innerText === znak &&  poljaTabele[4].innerText === znak &&  poljaTabele[6].innerText === znak){ 
+                                        polja(2,4,6,znak.toString());
                                         return;
                                 }
+                
                                 znak === 'X'  ? znak  = 'O' : znak = 'X';
                                 znak ==='O' ? (bojaO.style.background ="yellow", bojaX.style.background = '') :  (bojaX.style.background  = 'yellow', bojaO.style.background = '');
                                 upis.innerText = znak + ' turn to play';
@@ -116,4 +84,13 @@ dugme.forEach(button => {                                                       
                 }
         });
 })
+
+function polja(a,b,c,znak) {
+        poljaTabele[a].style.background = 'lightgreen';
+        poljaTabele[b].style.background = 'lightgreen'; 
+        poljaTabele[c].style.background = 'lightgreen';
+        upis.innerText = znak + ' has WON!';
+        znak === 'X' ? (scoreX++, score1.innerText = 'X - ' + scoreX) : (scoreO++, score2.innerText = 'O - ' + scoreO);
+        blokada = 0;
+}
 
