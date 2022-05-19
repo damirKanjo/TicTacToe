@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #fdec52);
+    background: rgb(185, 146, 56);
 }
 
 *{
@@ -18,7 +18,7 @@ p {
     max-width: 800px;
     min-width: 350px;
     margin: auto;
-    background: rgb(192, 35, 35);
+    background: rgb(35, 72, 192);
     width: 90%;
     padding: 10px;
     text-align: center;
@@ -62,7 +62,7 @@ p {
 
 
 .upis {
-    background: linear-gradient(0.25turn, #f0de3a,#ebf8e1,#68c7f0);
+    background: linear-gradient(to bottom,white, rgb(221, 221, 41));
 }
 
 .score {
