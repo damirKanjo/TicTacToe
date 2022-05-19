@@ -10,6 +10,7 @@ let scoreX = 0;
 let score2 = document.querySelector('.ispisTextaO');
 let scoreO = 0;
 let rezultat = document.querySelector('.rezultat');
+let check = 0;
 
 window.onload = () => {                                                                 // pri uchitavanju stranice obavesti igracha shta treba da uradi kako bi
         upis.innerText = 'Click "New round" to start game.';                            // zapocheo igru
@@ -25,6 +26,7 @@ document.querySelector('.novaRunda').addEventListener("click", () => {          
         score2.innerText = 'O - ' + scoreO;
         bojaO.style.background = '';
         bojaX.style.background = '';
+        check = 0;
         znak ==='O' ? (bojaO.style.background ="yellow", bojaX.style.background = '') :  (bojaX.style.background  = 'yellow', bojaO.style.background = '');
 
         dugme.forEach(button => { 
@@ -40,6 +42,7 @@ dugme.forEach(button => {                                                       
                         if (button.innerText === "") {                                  // i na osnovu toga se menja boja pozadine polja tabele gde su simboli formirani u pobednichi niz.
                                 let indexPolja = poljaTabele.indexOf(button);
                                 poljaTabele[indexPolja].innerText = znak;
+                                check++;
 
                                 if (poljaTabele[0].innerText === znak && poljaTabele[1].innerText === znak &&  poljaTabele[2].innerText === znak){
                                         polja(0,1,2,znak.toString());
@@ -74,9 +77,12 @@ dugme.forEach(button => {                                                       
                                         return;
                                 }
                 
+                                console.log(check)
                                 znak === 'X'  ? znak  = 'O' : znak = 'X';
                                 znak ==='O' ? (bojaO.style.background ="yellow", bojaX.style.background = '') :  (bojaX.style.background  = 'yellow', bojaO.style.background = '');
                                 upis.innerText = znak + ' turn to play';
+
+                                check == 9 ? upis.innerText = 'No one won, play another!' : '';
                         }
                         else {
                                 alert(' This place is already taken, try another! ');
@@ -89,7 +95,7 @@ function polja(a,b,c,znak) {
         poljaTabele[a].style.background = 'lightgreen';
         poljaTabele[b].style.background = 'lightgreen'; 
         poljaTabele[c].style.background = 'lightgreen';
-        upis.innerText = znak + ' has WON!';
+        upis.innerText = znak + ' has WON!' + '\r\n' + 'Play another round!';
         znak === 'X' ? (scoreX++, score1.innerText = 'X - ' + scoreX) : (scoreO++, score2.innerText = 'O - ' + scoreO);
         blokada = 0;
 }
