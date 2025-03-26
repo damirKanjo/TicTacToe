@@ -9,6 +9,7 @@ let score1 = document.querySelector('.ispisTextaX');
 let scoreX = 0;
 let score2 = document.querySelector('.ispisTextaO');
 let scoreO = 0;
+let separate = document.querySelector('.separator');
 let rezultat = document.querySelector('.rezultat');
 let check = 0;
 
@@ -23,11 +24,12 @@ document.querySelector('.novaRunda').addEventListener("click", () => {          
         upis.innerText = znak + ' play first, good luck!';
         rezultat.innerText = "Score: ";
         score1.innerText = 'X - ' + scoreX;
+        separate.innerText = '|';
         score2.innerText = 'O - ' + scoreO;
         bojaO.style.background = '';
         bojaX.style.background = '';
         check = 0;
-        znak ==='O' ? (bojaO.style.background ="yellow", bojaX.style.background = '') :  (bojaX.style.background  = 'yellow', bojaO.style.background = '');
+        znak ==='O' ? (bojaO.style.background ="#ffdf87", bojaX.style.background = '') :  (bojaX.style.background  = '#ffdf87', bojaO.style.background = '');
 
         dugme.forEach(button => { 
                 button.innerText = "";
@@ -79,7 +81,7 @@ dugme.forEach(button => {                                                       
                 
                                 console.log(check)
                                 znak === 'X'  ? znak  = 'O' : znak = 'X';
-                                znak ==='O' ? (bojaO.style.background ="yellow", bojaX.style.background = '') :  (bojaX.style.background  = 'yellow', bojaO.style.background = '');
+                                znak ==='O' ? (bojaO.style.background ="#ffdf87", bojaX.style.background = '') :  (bojaX.style.background  = '#ffdf87', bojaO.style.background = '');
                                 upis.innerText = znak + ' turn to play';
 
                                 check == 9 ? upis.innerText = 'No one won, play another!' : '';
@@ -92,11 +94,10 @@ dugme.forEach(button => {                                                       
 })
 
 function polja(a,b,c,znak) {
-        poljaTabele[a].style.background = 'lightgreen';
-        poljaTabele[b].style.background = 'lightgreen'; 
-        poljaTabele[c].style.background = 'lightgreen';
+        poljaTabele[a].style.background = 'orange';
+        poljaTabele[b].style.background = 'orange';
+        poljaTabele[c].style.background = 'orange';
         upis.innerText = znak + ' has WON!' + '\r\n' + 'Play another round!';
         znak === 'X' ? (scoreX++, score1.innerText = 'X - ' + scoreX) : (scoreO++, score2.innerText = 'O - ' + scoreO);
         blokada = 0;
 }
-
