@@ -6,57 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Vezba </title>
     <link rel="stylesheet" href="style.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
 </head>
+
 <body>
     
-    <div class="container">
-        <p> Tic-Tac-Toe</p>
-        <button id="iks"> X </button>
-        <button id="oks"> O </button>
-        <button class="novaRunda"> New round </button>
-    </div>
-
-    
     <div class="container upis">
+        <div class="row">
+            <div class="col-md-5">
+                <p id="game"> Tic-Tac-Toe</p>
+                <button id="iks"> X </button>
+                <button id="oks"> O </button>
+                </br>
+                <button class="novaRunda"> New round </button>
+                <div class="score"> 
+                    <h2 class ="rezultat"></h2>
+                    <h1 class="ispisTextaX"></h1>
+                    <h1 class="separator" style="width: 10px;"></h1>
+                    <h1 class="ispisTextaO"></h1>
+                </div>
+            </div>
 
-        <h2 class="ispisTexta">  </h2>
-        <div class="grid-container"> 
-            <button class="grid-item ar ad">
-                
-            </button>
-            <button class="grid-item al ad ar">
-                
-            </button>
-            <button class="grid-item al ad">
-                
-            </button>
-            <button class="grid-item ad ar at">
-                
-            </button>
-            <button class="grid-item al at ar ad">
-                
-            </button>
-            <button class="grid-item at al ad">
-                
-            </button>
-            <button class="grid-item at ar">
-                
-            </button>
-            <button class="grid-item at al ar">
-                
-            </button>
-            <button class="grid-item al at">
-                
-            </button>
-        </div>
-        <div class="score"> 
-            <h2 class ="rezultat"> </h2>
-            <h1 class="ispisTextaX">  </h1>
-            <h1 class="ispisTextaO">  </h1>
+            <div class="col-md-7">
+                <div class="grid-container"> 
+                    <button class="grid-item"></button>
+                    <button class="grid-item"></button>
+                    <button class="grid-item"></button>
+                    <button class="grid-item"></button>
+                    <button class="grid-item"></button>
+                    <button class="grid-item"></button>
+                    <button class="grid-item"></button>
+                    <button class="grid-item"></button>
+                    <button class="grid-item"></button>
+                </div>
+            </div>
         </div>
     </div>
-
+    <div class="container remove">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="ispisTexta">  </h2>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
