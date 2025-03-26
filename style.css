@@ -1,77 +1,85 @@
-body {
-    background: rgb(185, 146, 56);
-}
-
-*{
-    box-sizing: border-box;
-}
-
-p {
-    position: absolute;
-    display: inline-block;
-    left: 0;
-    padding: 0 0 0 15px;
-    margin: 0;
-}
 .container {
     position: relative;
     max-width: 800px;
     min-width: 350px;
     margin: auto;
-    background: rgb(35, 72, 192);
     width: 90%;
-    padding: 10px;
+    padding: 25px;
     text-align: center;
+    margin-top: 5%;
+    background-color: antiquewhite;
+    border-radius: 35px;
+    font-family: 'Times New Roman', serif;
 }
 
+#game{
+    font-size: 50px;
+    font-family: 'Brush Script MT', cursive;
+}
 
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    padding: 5px;
+    padding-top: 15px;
     justify-content: center;
     align-content: center;
+    gap: 10px;
 }
 
 .grid-item {
     cursor: pointer;
     width: 100px;
     height: 100px;
-    font-size: 80px;
+    font-size: 2.5em;
+    font-weight: bold;
     text-align: center;
-    border: 0; 
-    background-color: rgba(255, 255, 255, .25);
+    border: 3px solid rgba(245, 123, 23, 0.56);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px; /* Rounded corners for buttons */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
-.at {
-    border-top: 1px solid rgb(0, 0, 0); 
-}
-.ad {
-    border-bottom: 1px solid rgb(0, 0, 0); 
-}
-.al {
-    border-left: 1px solid rgb(0, 0, 0); 
-}
-.ar {
-    border-right: 1px solid rgb(0, 0, 0); 
+.grid-item:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.05);
 }
 
 .grid-item:hover {
     background-color: rgba(255, 255, 255, .85);
 }
 
-
-.upis {
-    background: linear-gradient(to bottom,white, rgb(221, 221, 41));
-}
-
 .score {
-    box-sizing: border-box;
-    width: 90%;
-    margin: auto;
+    margin: 10px auto;
 }
 
 h1 {
     display: inline-block;
     width: 25%;
+}
+
+
+/* Player Buttons */
+button {
+    padding: 20px 31px;
+    font-size: 1.3em;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px !important;
+    cursor: pointer;
+    border: 1px solid rgb(170, 170, 170);
+    transition: background-color 0.3s ease;
+}
+
+.novaRunda {
+    width: 150px;
+    margin-top: 20px !important;
+    background-color: #ff9800;
+}
+
+.novaRunda:hover {
+    background-color: #e68900;
+}
+
+.remove{
+    margin-top: 12px;
+    background: none !important; 
 }
